@@ -52,6 +52,10 @@
     backdrop-filter: blur(24px);
     border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
   }
+  .glow-text{
+    text-shadow: 0 0 30px 
+      color-mix(in srgb, var(--color-primary) 80%, transparent);
+  }
 }
 
 
@@ -87,5 +91,24 @@
 
     .animate-fade-in{
       animation : fade-in 0.8s ease-out both;
+    }
+
+    .animation-delay-100{
+      animation-delay: 0.1s;
+    }
+     .animation-delay-200{
+      animation-delay: 0.2s;
+    }
+     .animation-delay-300{
+      animation-delay: 0.3s;
+    } 
+      .animation-delay-400{
+        animation-delay: 0.4s;
+      }
+     .animation-delay-600{
+      animation-delay: 0.6s;
+    }
+     .animation-delay-800{
+      animation-delay: 0.8s;
     }
 }

@@ -1,3 +1,5 @@
+import {Button} from "@/components/Button";
+import { ArrowRight } from "lucide-react";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -23,7 +25,7 @@ const Hero = () => {
               animationDelay: `${Math.random() * 5}s`,
             }}
           />
-        ))}
+        ))}  
       </div>
 
       {/* Content  */}
@@ -39,10 +41,23 @@ const Hero = () => {
                 Software Engineer | React Devloper
               </span>
             </div>
-            <div>
-                <h1>
-                    Hi, I'm <span className="text-primary glow-text">Deepu</span>, a passionate Software Engineer specializing in React development. I create dynamic and responsive web applications that provide seamless user experiences. With a strong foundation in JavaScript and a keen eye for design, I bring ideas to life through code. Let's build something amazing together!
+
+            {/* Headline  */}
+
+            <div className="space-y-4">
+                <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-200">
+                    Hi, I'm <span className="text-primary glow-text">Deepu</span>, 
+                    <br/>a passionate Software Engineer
+                    <br/><span className="font-serif italic font-normal font-white">  specializing in React development.</span> 
                 </h1>
+                <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-300">
+                  I create dynamic and responsive web applications that provide seamless user experiences. With a strong foundation in JavaScript and React, I am dedicated to building efficient and scalable solutions that meet the needs of users and businesses alike.
+                </p>
+            </div>
+            {/* CTAs  */}
+
+            <div>
+              <Button size = "lg">Contact Me  <ArrowRight className="w-5 h-5"/></Button>
             </div>
           </div>
           {/* Right Column - profile image  */}
