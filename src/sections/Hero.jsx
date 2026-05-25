@@ -1,5 +1,6 @@
 import {Button} from "@/components/Button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
+import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -58,6 +59,7 @@ const Hero = () => {
 
             <div>
               <Button size = "lg">Contact Me  <ArrowRight className="w-5 h-5"/></Button>
+             <AnimatedBorderButton children="Download_CV" />
             </div>
           </div>
           {/* Right Column - profile image  */}
