@@ -56,6 +56,11 @@
     text-shadow: 0 0 30px 
       color-mix(in srgb, var(--color-primary) 80%, transparent);
   }
+  .border-glow{
+    box-shadow: 0 0 20px 
+      color-mix(in srgb, var(--color-primary) 20%, transparent),
+      inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent)
+  }
 }
 
 
@@ -111,6 +116,7 @@
      .animation-delay-800{
       animation-delay: 0.8s;
     }
+
 @keyframes animated-border {
   0%{
     stroke-dashoffset: 400%;
@@ -121,12 +127,14 @@
   
 }
       .group:hover .animated-border-path{
-        animation:animated-border 1.5 s linear infinite;
+        animation:animated-border 3s linear infinite;
       }
 
-    .animated-border:hover{
+    .animated-border:hover{      
       background-color: color-mix(in srgb, #26c4b8 15% , transparent);
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(16px);
       box-shadow: 0 0 20px color-mix(in srgb, #26c4b8 20%, transparent);
     }
+  
+
 }

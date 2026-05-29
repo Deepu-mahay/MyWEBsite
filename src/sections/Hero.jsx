@@ -1,7 +1,10 @@
-import {Button} from "@/components/Button";
-import { ArrowRight, Download } from "lucide-react";
+import { Button } from "@/components/Button";
+import { ArrowRight } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 const Hero = () => {
+  const socials = [];
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 ">
@@ -26,7 +29,7 @@ const Hero = () => {
               animationDelay: `${Math.random() * 5}s`,
             }}
           />
-        ))}  
+        ))}
       </div>
 
       {/* Content  */}
@@ -37,8 +40,7 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
-
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
                 Software Engineer | React Devloper
               </span>
             </div>
@@ -46,23 +48,61 @@ const Hero = () => {
             {/* Headline  */}
 
             <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-200">
-                    Hi, I'm <span className="text-primary glow-text">Deepu</span>, 
-                    <br/>a passionate Software Engineer
-                    <br/><span className="font-serif italic font-normal font-white">  specializing in React development.</span> 
-                </h1>
-                <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-300">
-                  I create dynamic and responsive web applications that provide seamless user experiences. With a strong foundation in JavaScript and React, I am dedicated to building efficient and scalable solutions that meet the needs of users and businesses alike.
-                </p>
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-200">
+                Hi, I'm <span className="text-primary glow-text">Deepu</span>,
+                <br />a passionate Software Engineer
+                <br />
+                <span className="font-serif italic font-normal font-white">
+                  {" "}
+                  specializing in React development.
+                </span>
+              </h1>
+              <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-300">
+                I create dynamic and responsive web applications that provide
+                seamless user experiences. With a strong foundation in
+                JavaScript and React, I am dedicated to building efficient and
+                scalable solutions that meet the needs of users and businesses
+                alike.
+              </p>
             </div>
             {/* CTAs  */}
 
+            <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
+              <Button size="lg">
+                Contact Me <ArrowRight className="w-5 h-5" />
+              </Button>
+              <AnimatedBorderButton />
+            </div>
             <div>
-              <Button size = "lg">Contact Me  <ArrowRight className="w-5 h-5"/></Button>
-             <AnimatedBorderButton children="Download_CV" />
+              {/* social media links */}
+              <div className="flex items-center gap-4 mt-6 animate-fade-in animation-delay-400">
+                <span className="text-sm text-muted-foreground">Follow:</span>
+                {[
+                  { icon: FaGithub, href: "#" },
+                  { icon: FaLinkedin, href: "#" },
+                  { icon: FaXTwitter, href: "#" },
+                ].map((social, idx) => (
+                  <a key={idx} href={social.href}
+                  className ="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                  >
+                    {<social.icon className="w-5 h-5" />}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
           {/* Right Column - profile image  */}
+                <div className="relative animate-fade-in animate-delay-300">
+                  {/* Profile image */}
+                  <div className="relative max-w-md mx-auto">
+                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-be from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse"/>
+                    <div className="relative glass rounded-3xl p-2 border-glow">
+                      <img src="/Profile-photo.png" alt="Dpinder Mahay"
+                      className="w-full aspect-4/5 object-cover rounded-2xl" />
+                    </div>
+                  </div>
+                </div>
+
         </div>
       </div>
     </section>
