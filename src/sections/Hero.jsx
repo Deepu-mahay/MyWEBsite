@@ -1,8 +1,22 @@
 import { Button } from "@/components/Button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
+
+const skills = [
+  "React",
+  "JavaScript",
+  "TypeScript",
+  "HTML",
+  "CSS",
+  "Node.js",
+  "Express",
+  "MongoDB",
+  "Tailwind CSS",
+  "Git",
+];
+
 const Hero = () => {
   const socials = [];
   return (
@@ -15,7 +29,6 @@ const Hero = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background " />
       </div>
-
       {/* Green dots  */}
       <div className=" absolute inset-0 overflow-hidden pointer-events-none ">
         {[...Array(30)].map((_, i) => (
@@ -31,9 +44,7 @@ const Hero = () => {
           />
         ))}
       </div>
-
       {/* Content  */}
-
       <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column -Text Content  */}
@@ -82,8 +93,10 @@ const Hero = () => {
                   { icon: FaLinkedin, href: "#" },
                   { icon: FaXTwitter, href: "#" },
                 ].map((social, idx) => (
-                  <a key={idx} href={social.href}
-                  className ="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                  <a
+                    key={idx}
+                    href={social.href}
+                    className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
                   >
                     {<social.icon className="w-5 h-5" />}
                   </a>
@@ -92,18 +105,67 @@ const Hero = () => {
             </div>
           </div>
           {/* Right Column - profile image  */}
-                <div className="relative animate-fade-in animate-delay-300">
-                  {/* Profile image */}
-                  <div className="relative max-w-md mx-auto">
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-be from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse"/>
-                    <div className="relative glass rounded-3xl p-2 border-glow">
-                      <img src="/Profile-photo.png" alt="Dpinder Mahay"
-                      className="w-full aspect-4/5 object-cover rounded-2xl" />
-                    </div>
+          <div className="relative animate-fade-in animate-delay-300">
+            {/* Profile image */}
+            <div className="relative max-w-md mx-auto">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-be from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
+              <div className="relative glass rounded-3xl p-2 border-glow">
+                <img
+                  src="/Profile-photo.png"
+                  alt="Dpinder Mahay"
+                  className="w-full aspect-4/5 object-cover rounded-2xl"
+                />
+                {/* floating badge */}
+                <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                    <span className="text-sm font-medium">
+                      Available for work
+                    </span>
                   </div>
                 </div>
-
+                {/* Stats badge */}
+                <div className="font-sm absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
+                  <div className="text-2xl font-bold text-primary">2+</div>
+                  <div className="text-xs text-muted text-muted-foreground">
+                    Years Experience
+                  </div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        {/* Skill Section  */}
+        <div className="mt-20 animate-fade-in animation-delay-600">
+          <p className="text-sm text-muted-foreground mb-6 text-center">
+            Technologies I Work with
+          </p>
+          <div className="relative overflow-hidden">
+            <div className="flex animate-marquee">
+              {[...skills, ...skills].map((skill, idx) => (
+                <div className="flex-shrink-0 px-8 py-4 " key={idx}>
+                  <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                    {skill}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in
+      animation-delay-800">
+        <a
+          href="#about"
+          className="flex flex-col items-center gap-2 text-muted-foreground"
+        >
+          <span className="text-xs uppercase tracking-wider">scroll</span>
+          <ChevronDown className="h-6 w-6 animate-bounce" />
+        </a>
       </div>
     </section>
   );
